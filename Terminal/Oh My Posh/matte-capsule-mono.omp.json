@@ -27,7 +27,7 @@
           "foreground": "p:text_dark",
           "background": "p:matte_4",
           "powerline_symbol": "\ue0b0",
-          "template": "{{ if .Env.PNPPSSITE }} \uf2dd {{ .Env.PNPPSSITE }}{{ end }}"
+          "template": "{{ if .Env.PNPPSSITE }} \uf2dd {{ .Env.PNPPSSITE }} {{ end }}"
         },
         {
           "type": "text",
@@ -49,7 +49,7 @@
           "leading_diamond": "\ue0b6",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
-          "template": "{{ .UserName }} ",
+          "template": " {{ .UserName }} ",
           "type": "session"
         },
         {
@@ -70,10 +70,10 @@
           "options": {
             "branch_icon": "",
             "fetch_status": false,
-            "fetch_upstream_icon": true
+            "fetch_upstream_icon": false
           },
           "style": "powerline",
-          "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}) ",
+          "template": " \uf09b {{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
         },
         {
@@ -92,7 +92,7 @@
           },
           "style": "diamond",
           "template": " \u2665 {{ .CurrentDate | date .Format }} ",
-          "trailing_diamond": "\ue0b0",
+          "trailing_diamond": "\ue0b4",
           "type": "time"
         }
       ],
