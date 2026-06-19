@@ -1,0 +1,68 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "C:/Users/user_name/.config/fastfetch/ascii.txt", //Replace this path with the path to your ASCII file.
+    "color": {
+      "1": "#FFFFFF",
+      "2": "#EEEEEE",
+      "3": "#DDDDDD",
+      "4": "#CCCCCC",
+      "5": "#BBBBBB",
+      "6": "#AAAAAA",
+      "7": "#999999",
+      "8": "#888888",
+      "9": "#777777"
+    },
+    "padding": {
+      "top": 1,
+      "right": 3
+    }
+  },
+  "display": {
+    "separator": " "
+  },
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "color": {
+        "user": "#FFFFFF",
+        "at": "#CCCCCC",
+        "host": "#999999"
+      }
+    },
+    "break",
+    {
+      "type": "os",
+      "key": "",
+      "keyColor": "#FFFFFF"
+    },
+    {
+      "type": "cpu",
+      "key": "",
+      "keyColor": "#DDDDDD"
+    },
+    {
+      "type": "board",
+      "key": "󰚗",
+      "keyColor": "#BBBBBB"
+    },
+    {
+      "type": "memory",
+      "key": "",
+      "keyColor": "#999999",
+      "format": "{used} / {total} ({percentage})"
+    },
+    {
+      "type": "disk",
+      "key": "",
+      "keyColor": "#777777"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
+}
