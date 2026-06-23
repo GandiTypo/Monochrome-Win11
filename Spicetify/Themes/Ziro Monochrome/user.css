@@ -466,6 +466,24 @@ button[data-testid="lyrics-button"],
   background-color: var(--spice-button);
   color: var(--spice-shadow);
 }
+
+/* ========== PERBAIKAN: Menutup kebocoran warna di filter bar (All/Music) ========== */
+.main-filterBar-filterBar,
+.x-filterBar-filterBar,
+.main-filterBar-filterBarContainer,
+.x-filterBar-filterBarContainer,
+.main-filterBar-filterBarBackground,
+.x-filterBar-filterBarBackground,
+.main-filterBar-wrapper,
+.x-filterBar-wrapper,
+.main-home-filterChipsSection,
+.main-home-filterChipsSectionActive {
+    background-color: var(--spice-main) !important;
+    background-image: none !important;
+    background: var(--spice-main) !important;
+}
+/* ================================================================================= */
+
 /* podcasts */
 .main-yourEpisodes-coverContainer,
 .SpVoh9vvBN0kIwzfCiBh,
