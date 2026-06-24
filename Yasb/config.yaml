@@ -1,0 +1,118 @@
+watch_stylesheet: true
+watch_config: true
+
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic reload-configuration"
+
+bars:
+  status-bar:
+    enabled: true
+    screens: ['*']
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+    blur_effect:
+      enabled: false
+      dark_mode: false
+      round_corners: false
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 32
+    padding:
+      top: 8
+      left: 12
+      bottom: 0
+      right: 12
+    widgets:
+      left:
+        [
+          "win_button",
+          "komorebi_workspaces"
+        ]
+      center: [
+        "active_window"
+      ]
+      right:
+        [
+          "cpu",
+          "memory",
+          "power_menu"
+        ]
+
+widgets:
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 16
+      max_length: 56
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label_alt: "<span>\uf4bc</span> {info[percent][total]}%"
+      update_interval: 2000
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "exec cmd /c Taskmgr"
+
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uefc5</span> {virtual_mem_percent}%"
+      label_alt: "<span>\uefc5</span> {virtual_mem_free}"
+      update_interval: 10000
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "exec cmd /c Taskmgr"
+
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Komorebi Offline"
+      label_workspace_btn: "\uf10c"
+      label_workspace_active_btn: "\uf192"
+      label_workspace_populated_btn: "\uf192"
+      label_default_name: "{index}"
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
+
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 300
+      button_row: 3
+      buttons:
+        lock: ["\uea75","Lock"]
+        signout: ["\udb80\udf43","Sign out"]
+        shutdown: ["\uf011","Shut Down"]
+        restart: ["\uead2","Restart"]
+        sleep: ["\u23fe","Sleep"]
+        cancel: ["\udb81\udf3a","Cancel"]
+
+  win_button:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "\udb80\udf5c"
+      label_alt: "\udb80\udf5c"
+      class_name: "system-widget"
+      callbacks:
+        on_left: "exec start_menu"

@@ -1,0 +1,151 @@
+/*
+Monochrome / Black & White Theme
+Cleaned, performance‑focused, with smooth workspace transitions
+*/
+
+* {
+  font-size: 12px;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-family: "JetBrainsMono NF";
+  margin: 0;
+  padding: 0;
+}
+
+.yasb-bar {
+  padding: 0;
+  margin: 0;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+.widget {
+  padding: 0 8px;
+  margin: 0 4px;
+}
+.widget .label {
+  padding: 0px 2px;
+}
+.widget .label.alt {
+  padding: 0px 8px;
+}
+
+/* Active window */
+.active-window-widget {
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+/* Komorebi workspaces – now with transitions */
+.komorebi-workspaces {
+  margin: 4px 4px;
+  border-radius: 4px;
+  padding: 4px 0;
+}
+.komorebi-workspaces .ws-btn {
+  font-size: 12px;
+  border: none;
+  color: #888888;
+  padding: 0 8px 0 8px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.komorebi-workspaces .ws-btn:hover {
+  color: #FFFFFF;
+}
+.komorebi-workspaces .ws-btn.populated {
+  color: #808080;   /* clearly distinguishable from active white */
+}
+.komorebi-workspaces .ws-btn.active {
+  color: #FFFFFF;
+}
+
+/* Power menu */
+.power-menu-widget .label {
+  color: #FFFFFF;
+  font-size: 16px;
+  padding-right: 4px;
+}
+.uptime {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+.power-menu-popup {
+  background-color: #000000;
+  border-radius: 6px;
+  border: 1px solid #FFFFFF;
+}
+.power-menu-popup .button {
+  width: 240px;
+  height: 120px;
+  border-radius: 8px;
+  background-color: #333333;
+  color: #FFFFFF;
+  margin: 8px;
+  transition: background-color 0.2s ease;
+}
+.power-menu-popup .button.hover,
+.power-menu-popup .button:hover {
+  background-color: #444444;
+}
+.power-menu-popup .button .label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+.power-menu-popup .button .icon {
+  font-size: 48px;
+  padding-top: 12px;
+  padding-right: 8px;
+  color: #FFFFFF;
+}
+
+/* CPU & Memory icons */
+.icon {
+  font-size: 16px;
+  margin-right: 4px;
+}
+.cpu-widget .icon {
+  font-size: 14px;
+  color: #FFFFFF;
+}
+.memory-widget .icon {
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+/* Start button (win_button) */
+.system-widget .label {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+/* Dark theme overrides */
+*.dark .label {
+  color: #FFFFFF;
+}
+.yasb-bar.dark {
+  background-color: #000000;
+}
+
+*.dark .komorebi-workspaces .ws-btn {
+  color: #888888;
+}
+*.dark .komorebi-workspaces .ws-btn:hover {
+  color: #FFFFFF;
+}
+*.dark .komorebi-workspaces .ws-btn.populated {
+  color: #808080;
+}
+*.dark .komorebi-workspaces .ws-btn.active {
+  color: #FFFFFF;
+}
+
+*.dark .power-menu-widget .label {
+  color: #FFFFFF;
+}
+*.dark .system-widget .label {
+  font-size: 24px;
+  color: #FFFFFF;
+}
