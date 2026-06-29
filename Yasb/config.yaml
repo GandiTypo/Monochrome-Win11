@@ -13,13 +13,6 @@ bars:
     class_name: "yasb-bar"
     alignment:
       position: "top"
-    blur_effect:
-      enabled: false
-      dark_mode: false
-      round_corners: false
-    window_flags:
-      always_on_top: false
-      windows_app_bar: true
     dimensions:
       width: "100%"
       height: 32
@@ -30,19 +23,14 @@ bars:
       right: 12
     widgets:
       left:
-        [
-          "win_button",
-          "komorebi_workspaces"
-        ]
-      center: [
-        "active_window"
-      ]
+        - "win_button"
+        - "komorebi_workspaces"
+      center:
+        - "active_window"
       right:
-        [
-          "cpu",
-          "memory",
-          "power_menu"
-        ]
+        - "cpu"
+        - "memory"
+        - "power_menu"
 
 widgets:
   active_window:
@@ -63,10 +51,6 @@ widgets:
       label: "<span>\uf4bc</span> {info[percent][total]}%"
       label_alt: "<span>\uf4bc</span> {info[percent][total]}%"
       update_interval: 2000
-      callbacks:
-        on_left: "do_nothing"
-        on_middle: "do_nothing"
-        on_right: "exec cmd /c Taskmgr"
 
   memory:
     type: "yasb.memory.MemoryWidget"
@@ -74,10 +58,6 @@ widgets:
       label: "<span>\uefc5</span> {virtual_mem_percent}%"
       label_alt: "<span>\uefc5</span> {virtual_mem_free}"
       update_interval: 10000
-      callbacks:
-        on_left: "do_nothing"
-        on_middle: "do_nothing"
-        on_right: "exec cmd /c Taskmgr"
 
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
@@ -95,18 +75,18 @@ widgets:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
       label: "\uf011"
-      uptime: True
-      blur: False
-      blur_background: True
+      uptime: true
+      blur: false
+      blur_background: true
       animation_duration: 300
       button_row: 3
       buttons:
-        lock: ["\uea75","Lock"]
-        signout: ["\udb80\udf43","Sign out"]
-        shutdown: ["\uf011","Shut Down"]
-        restart: ["\uead2","Restart"]
-        sleep: ["\u23fe","Sleep"]
-        cancel: ["\udb81\udf3a","Cancel"]
+        lock: ["\uea75", "Lock"]
+        signout: ["\udb80\udf43", "Sign out"]
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        sleep: ["\u23fe", "Sleep"]
+        cancel: ["\udb81\udf3a", "Cancel"]
 
   win_button:
     type: "yasb.custom.CustomWidget"
